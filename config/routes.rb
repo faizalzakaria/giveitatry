@@ -1,6 +1,9 @@
 Giveitatry::Application.routes.draw do
-  resources :images
-
+  resources :images do
+    collection do
+      get 'viewall'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

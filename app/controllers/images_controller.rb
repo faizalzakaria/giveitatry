@@ -11,6 +11,15 @@ class ImagesController < ApplicationController
     end
   end
 
+  def viewall
+    @images = Image.all
+
+    respond_to do |format|
+      format.html # viewall.html.erb
+      format.json { render json: @images }
+    end
+  end
+
   # GET /images/1
   # GET /images/1.json
   def show
