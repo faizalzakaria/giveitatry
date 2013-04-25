@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.last(10)
 
     respond_to do |format|
       format.html # index.html.erb
