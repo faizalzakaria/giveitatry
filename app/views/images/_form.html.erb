@@ -11,15 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit t :submit_image %>
-  </div>
+  <fieldset>
+    <legend>Image details</legend>
+    <ol>
+      <li>
+      <%= f.label :url %>
+      <%= f.text_field :url, :size => 150 %>
+      </li>
+      <li>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      </li>
+  </fieldset>
+  <fieldset>
+    <button type=submit><%= t :submit_image %></button>
+  </fieldset>
+
 <% end %>

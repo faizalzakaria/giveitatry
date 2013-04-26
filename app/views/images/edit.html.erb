@@ -1,7 +1,11 @@
-<h1>Editing image</h1>
+<div class="form_title">
+  <h1>Editing image</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %> |
-<%= link_to 'Destroy', @image, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="footer_form">
+  <%= link_to 'Show', @image %> |
+  <%= link_to 'Back', images_path %> |
+  <%= link_to 'Destroy', @image, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

@@ -1,13 +1,14 @@
 class ImagesController < ApplicationController
-  layout "mylayout"
+  layout 'main'
+
   # GET /images
   # GET /images.json
   def index
     @images = Image.last(10)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @images }
+      format.html { render :layout => 'index' }
+      format.json { render :layout => 'index', json: @images }
     end
   end
 

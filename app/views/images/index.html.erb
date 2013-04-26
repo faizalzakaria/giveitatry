@@ -1,6 +1,6 @@
 <div class="container">	
   <!-- Codrops top bar -->
-  
+
   <div class="codrops-top clearfix">
     <span class="right"><a href=<%= new_image_path %>><strong>Submit Photo</strong></a></span>
   </div><!--/ Codrops top bar -->
@@ -15,6 +15,9 @@
         <div>
           <img src=<%= image.url %> alt="img01" />
         </div>
+        <figcaption>
+          <h2><span><%= image.description %></span></h2>
+        </figcaption>
       </figure>
       <% end %>
     </div>
