@@ -1,12 +1,15 @@
-<div class="container">	
+<div class="container">
   <!-- Codrops top bar -->
 
   <div class="codrops-top clearfix">
+    <span class="left">
+      <a href=<%= room_images_path(@room_id[:prev]) %>><strong>Prev</strong></a>|
+      <a href=<%= room_images_path(@room_id[:next]) %>><strong>Next</strong></a>
+    </span>
     <span class="right"><a href=<%= new_image_path %>><strong>Submit Photo</strong></a></span>
   </div><!--/ Codrops top bar -->
 
   <h1>Faizal Zakaria</h1>
-
   <div id="gr-gallery" class="gr-gallery">
     <div class="gr-main">
       <!-- back end -->
@@ -16,7 +19,8 @@
           <img src=<%= image.url %> alt="img01" />
         </div>
         <figcaption>
-          <h2><span><%= image.description %></span></h2>
+          <h2><span><%= image.title %></span></h2>
+          <div><p><%= image.description %></p></div>
         </figcaption>
       </figure>
       <% end %>

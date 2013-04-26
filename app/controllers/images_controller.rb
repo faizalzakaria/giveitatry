@@ -4,11 +4,22 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.last(10).reverse
 
+    img_cnt = Image.count;
+    max_room = img_cnt / Giveitatry::Application.config.limit_per_room
+    if img_cnt % Giveitatry::Application.config.limit_per_room
+      max_room += 1
+    end
+    max_room -= 1
+
+    @room_id = {
+      :next => [1, max_room].min,
+      :prev => 0
+    }
+    @images = Image.order("updated_at DESC").limit(Giveitatry::Application.config.limit_per_room).offset(0)
     respond_to do |format|
       format.html { render :layout => 'index' }
-      format.json { render :layout => 'index', json: @images }
+      format.json { render :layout => 'index', json: @images, json: @room_id }
     end
   end
 

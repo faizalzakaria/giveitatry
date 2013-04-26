@@ -4,3 +4,4 @@ require 'uri_validator'
 
 # Initialize the rails application
 Giveitatry::Application.initialize!
+Giveitatry::Application.config.limit_per_room = 10

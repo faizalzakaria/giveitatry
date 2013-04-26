@@ -19,8 +19,13 @@
       <%= f.text_field :url, :size => 150 %>
       </li>
       <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      </li>
+      <li>
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_area :description, :maxlength => "100", :rows => "5",
+      :cols => "5", :resize => "none" %>
       </li>
   </fieldset>
   <fieldset>
