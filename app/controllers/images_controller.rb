@@ -86,7 +86,7 @@ class ImagesController < ApplicationController
     @image.destroy
 
     respond_to do |format|
-      format.html { redirect_to images_url }
+      format.html { redirect_to viewall_images_url }
       format.json { head :no_content }
     end
   end
