@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.last(10)
+    @images = Image.last(10).reverse
 
     respond_to do |format|
       format.html { render :layout => 'index' }
